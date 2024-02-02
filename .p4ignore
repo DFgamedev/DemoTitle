@@ -1,0 +1,66 @@
+#Here you can specify files to ignore when adding files to the depot.
+
+#The syntax for P4IGNORE files is njot the same as Perforce syntax.
+#Instead, it is similar to that used by other versioning systems:
+#
+# - Files are specified in local syntax
+# - a # character at the beggining of a line denotes a comment
+# - a ! character at the beginning of a line excludes the specification
+# - a * wildcard matches substrings.
+#
+# For example:
+#
+# foo.txt  Ignore files called "foo.txt"
+# *.exe	   Ignore all executables 
+# !bar.exe Exclude bar.exe from being ignored
+#
+################################################################################
+# Ignore root Visual Studio solution files. We do check in some sln files in subdirectories, so only ignore
+# the ones found in the root.
+/*.sln/.p4sync.txt
+
+# Ignore all Visual Studio temp files.
+*.suo
+*.opensdf
+*.sdf
+*.vsconfig
+.vs
+.vscode
+**/DerivedDataCache/Boot.ddc
+**/DerivedDataCache/**/*.udd
+
+# Ignore generated VS solution files
+/UnrealProjects/*.sln
+
+# Ignore all intermediate and Saved directiories
+**/Binaries/*
+**/Intermediate/*
+**/Saved/*
+**/Platforms/*
+**/*.sln
+
+# Ignore UBT's configuration.xml 
+Engine/Programs/UnrealBuildTool/*
+*.uatbuildrecord
+*.tmp
+
+# Ignore built binaries and temporary build files
+*/obj/*
+*.csprojAssemblyReference.cache
+DemonsHeadGame/Binaries/
+
+# Ignore UBT's log output (GameModeBase- set invisible)
+/Engine/Programs/UnrealBuildTool/*.txt
+
+# Ignore Python cached files
+*.pyc
+
+# Ignore JetBrain's IDE folders
+.idea/
+.gradle/
+
+*autosave_*.spp
+*.swatches
+
+# Ignore files added by Finder on Mac
+.DS_Store
