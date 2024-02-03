@@ -1,3 +1,3 @@
-Write gamemode and character code files
+Write gamemode and character code cpp and header files
 Import mesh, materials and animations
-Create character and animation blueprints
+Script character and animation blueprints
